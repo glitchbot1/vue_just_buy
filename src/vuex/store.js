@@ -1,8 +1,6 @@
 import axios from "axios"
 import Vuex from 'vuex'
-import Vue from 'vue'
 
-Vue.use(Vuex);
 
 let store = new Vuex.Store({
     state:{
@@ -19,7 +17,7 @@ let store = new Vuex.Store({
             method: "GET"
             })
                 .then((products )=>{
-                    commit('SET_PRODUCTS_TO_STATE', products)
+                    commit('SET_PRODUCTS_TO_STATE', products.data)
                     return products;
                 })
                 .catch((error) =>{
